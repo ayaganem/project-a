@@ -1,0 +1,7 @@
+#Internal package file, do not edit.
+#Thu Jun 07 00:07:10 IDT 2018
+0.baseType=DIRECTORY
+0.base=C\:\\Users\\rockg\\Desktop\\GitHub\\project-a\\streamerInput\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\0
+0.path=classes.dex
+0.set=DEX
+count=1

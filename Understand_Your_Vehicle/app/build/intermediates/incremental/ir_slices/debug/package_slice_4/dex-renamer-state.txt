@@ -1,0 +1,4 @@
+#Thu Oct 18 18:57:21 IDT 2018
+base.0=C\:\\Users\\rockg\\Desktop\\GitHub\\project-a\\Understand_Your_Vehicle\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\5
+path.0=classes.dex
+renamed.0=classes.dex

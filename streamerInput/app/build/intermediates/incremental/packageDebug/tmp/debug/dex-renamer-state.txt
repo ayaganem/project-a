@@ -1,0 +1,4 @@
+#Thu Jun 07 00:07:10 IDT 2018
+base.0=C\:\\Users\\rockg\\Desktop\\GitHub\\project-a\\streamerInput\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\0
+path.0=classes.dex
+renamed.0=classes.dex
