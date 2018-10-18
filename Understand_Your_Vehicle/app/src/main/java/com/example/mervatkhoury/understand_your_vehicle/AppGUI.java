@@ -5,16 +5,12 @@ import android.media.Image;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
-import android.view.MotionEvent;
-import android.view.GestureDetector;
-import android.support.v4.view.GestureDetectorCompat;
 import android.widget.ImageView;
 
 import com.example.mervatkhoury.understand_your_vehicle.R;
 
-public class AppGUI extends AppCompatActivity implements GestureDetector.OnGestureListener,GestureDetector.OnDoubleTapListener{
+public class AppGUI extends AppCompatActivity {
 
-    private GestureDetectorCompat gestureDetector;
     ImageView add;
     ImageView start;
     ImageView stop;
@@ -42,11 +38,10 @@ public class AppGUI extends AppCompatActivity implements GestureDetector.OnGestu
         pause.setVisibility(View.GONE);
         stop.setVisibility(View.GONE);
 
-        gestureDetector = new GestureDetectorCompat(this,this);
-        gestureDetector.setOnDoubleTapListener(this);
         addListenerOnButton();
     }
 
+<<<<<<< HEAD
     ////////////////begin Gestures////////////////////
     //change the return to true if handled
     @Override
@@ -98,6 +93,8 @@ public class AppGUI extends AppCompatActivity implements GestureDetector.OnGestu
     }
     ////////////////end Gestures////////////////////
     ////////////////begin Clicks////////////////////
+=======
+>>>>>>> parent of 56be34c... שו בדו מן חיאתי
     public void addListenerOnButton() {
 
         add.setOnClickListener(new View.OnClickListener() {
@@ -148,5 +145,5 @@ public class AppGUI extends AppCompatActivity implements GestureDetector.OnGestu
         });
 
     }
-    ////////////////end Clicks////////////////////
+
 }
