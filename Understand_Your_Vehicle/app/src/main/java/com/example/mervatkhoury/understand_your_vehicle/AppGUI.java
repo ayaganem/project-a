@@ -5,13 +5,17 @@ import android.media.Image;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.view.MotionEvent;
+import android.view.GestureDetector;
+import android.support.v4.view.GestureDetectorCompat;
 import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.mervatkhoury.understand_your_vehicle.R;
 
-public class AppGUI extends AppCompatActivity {
+public class AppGUI extends AppCompatActivity implements GestureDetector.OnGestureListener,GestureDetector.OnDoubleTapListener{
 
+    private GestureDetectorCompat gestureDetector;
     ImageView add;
     ImageView start;
     ImageView stop;
@@ -62,9 +66,59 @@ public class AppGUI extends AppCompatActivity {
         s2.setVisibility(View.GONE);
         s3.setVisibility(View.GONE);
 
+        gestureDetector = new GestureDetectorCompat(this,this);
+        gestureDetector.setOnDoubleTapListener(this);
         addListenerOnButton();
     }
 
+    ////////////////begin Gestures////////////////////
+    //change the return to true if handled
+    @Override
+    public boolean onSingleTapConfirmed(MotionEvent e) {
+        return false;
+    }
+
+    @Override
+    public boolean onDoubleTap(MotionEvent e) {
+        return false;
+    }
+
+    @Override
+    public boolean onDoubleTapEvent(MotionEvent e) {
+        return false;
+    }
+
+    @Override
+    public boolean onDown(MotionEvent e) {
+        return false;
+    }
+
+    @Override
+    public void onShowPress(MotionEvent e) {
+
+    }
+
+    @Override
+    public boolean onSingleTapUp(MotionEvent e) {
+        return false;
+    }
+
+    @Override
+    public boolean onScroll(MotionEvent e1, MotionEvent e2, float distanceX, float distanceY) {
+        return false;
+    }
+
+    @Override
+    public void onLongPress(MotionEvent e) {
+
+    }
+
+    @Override
+    public boolean onFling(MotionEvent e1, MotionEvent e2, float velocityX, float velocityY) {
+        return false;
+    }
+    ////////////////end Gestures////////////////////
+    ////////////////begin Clicks////////////////////
     public void addListenerOnButton() {
 
         add.setOnClickListener(new View.OnClickListener() {
@@ -140,5 +194,5 @@ public class AppGUI extends AppCompatActivity {
         });
 
     }
-
+    ////////////////end Clicks////////////////////
 }
