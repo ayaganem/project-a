@@ -69,6 +69,7 @@ public class AppGUI extends AppCompatActivity implements GestureDetector.OnGestu
         return false;
     }
 
+<<<<<<< HEAD
     @Override
     public void onShowPress(MotionEvent e) {
 
@@ -107,6 +108,8 @@ public class AppGUI extends AppCompatActivity implements GestureDetector.OnGestu
 
         });
 
+=======
+>>>>>>> parent of 46d909f... GUI Updates
         start.setOnClickListener(new View.OnClickListener() {
 
             @Override
