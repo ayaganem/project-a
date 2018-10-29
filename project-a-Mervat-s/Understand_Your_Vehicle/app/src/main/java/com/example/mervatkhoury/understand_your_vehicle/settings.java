@@ -1,7 +1,7 @@
 package com.example.mervatkhoury.understand_your_vehicle;
 
-import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.os.Bundle;
 
 public class settings extends AppCompatActivity {
 
