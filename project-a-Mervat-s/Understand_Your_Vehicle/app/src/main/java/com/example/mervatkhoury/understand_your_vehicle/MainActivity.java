@@ -1,10 +1,9 @@
 package com.example.mervatkhoury.understand_your_vehicle;
 
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 
-import com.example.mervatkhoury.understand_your_vehicle.R;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -17,7 +16,7 @@ public class MainActivity extends AppCompatActivity {
         handler.postDelayed(new Runnable() {
             @Override
             public void run() {
-                Intent intent = new Intent(MainActivity.this, com.example.mervatkhoury.understand_your_vehicle.AppGUI.class);
+                Intent intent = new Intent(MainActivity.this, AppGUI.class);
                 startActivity(intent);
                 overridePendingTransition(R.transition.fade_in, R.transition.fade_out);
             }
