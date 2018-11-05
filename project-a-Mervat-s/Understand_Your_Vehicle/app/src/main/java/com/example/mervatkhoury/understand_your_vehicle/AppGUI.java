@@ -7,9 +7,14 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.widget.ImageView;
 import com.example.mervatkhoury.understand_your_vehicle.R;
+import com.jjoe64.graphview.GraphView;
 
 public class AppGUI extends AppCompatActivity {
 
+    GraphView graph1;
+    GraphView graph2;
+    GraphView graph3;
+    GraphView graph4;
     ImageView settings;
     ImageView add;
     ImageView start;
@@ -42,12 +47,18 @@ public class AppGUI extends AppCompatActivity {
         plus2 = (ImageView) findViewById(R.id.plus2);
         plus3 = (ImageView) findViewById(R.id.plus3);
         plus4 = (ImageView) findViewById(R.id.plus4);
-
+        graph1 = (GraphView) findViewById(R.id.graph1);
+        graph2 = (GraphView) findViewById(R.id.graph2);
+        graph3 = (GraphView) findViewById(R.id.graph3);
+        graph4 = (GraphView) findViewById(R.id.graph4);
 
         start.setVisibility(View.VISIBLE);
         pause.setVisibility(View.GONE);
         stop.setVisibility(View.GONE);
-
+        graph1.setVisibility(View.GONE);
+        graph2.setVisibility(View.GONE);
+        graph3.setVisibility(View.GONE);
+        graph4.setVisibility(View.GONE);
         addListenerOnButton();
     }
 
@@ -139,6 +150,43 @@ public class AppGUI extends AppCompatActivity {
                 start.setVisibility(View.VISIBLE);
                 pause.setVisibility(View.GONE);
                 stop.setVisibility(View.GONE);
+            }
+
+        });
+
+        plus1.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View v) {
+                plus1.setVisibility(View.GONE);
+                graph1.setVisibility(View.VISIBLE);
+            }
+
+        });
+        plus2.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View v) {
+                plus2.setVisibility(View.GONE);
+                graph2.setVisibility(View.VISIBLE);
+            }
+
+        });
+        plus3.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View v) {
+                plus3.setVisibility(View.GONE);
+                graph3.setVisibility(View.VISIBLE);
+            }
+
+        });
+        plus4.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View v) {
+                plus4.setVisibility(View.GONE);
+                graph4.setVisibility(View.VISIBLE);
             }
 
         });
