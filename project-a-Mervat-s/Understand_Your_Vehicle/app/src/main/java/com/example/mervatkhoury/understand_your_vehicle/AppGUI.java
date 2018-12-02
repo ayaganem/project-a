@@ -1,33 +1,39 @@
 package com.example.mervatkhoury.understand_your_vehicle;
 
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.view.MotionEvent;
 import android.view.View;
 import android.widget.ImageView;
-import com.example.mervatkhoury.understand_your_vehicle.R;
+
+import com.google.firebase.database.collection.LLRBNode;
 import com.jjoe64.graphview.GraphView;
+import com.google.firebase.database.*;
 
 public class AppGUI extends AppCompatActivity {
 
-    GraphView graph1;
-    GraphView graph2;
-    GraphView graph3;
-    GraphView graph4;
-    ImageView settings;
-    ImageView add;
-    ImageView start;
-    ImageView stop;
-    ImageView pause;
-    ImageView refresh;
-    ImageView load;
-    ImageView share;
-    ImageView delete;
-    ImageView plus1;
-    ImageView plus2;
-    ImageView plus3;
-    ImageView plus4;
+    private RTGraph graph1;
+    private RTGraph graph2;
+    private RTGraph graph3;
+    private RTGraph graph4;
+
+    private ImageView settings;
+    private ImageView add;
+    private ImageView start;
+    private ImageView stop;
+    private ImageView pause;
+    private ImageView refresh;
+    private ImageView load;
+    private ImageView share;
+    private ImageView delete;
+    private ImageView plus1;
+    private ImageView plus2;
+    private ImageView plus3;
+    private ImageView plus4;
+
+    //FirebaseDatabase database = FirebaseDatabase.getInstance();
+    //DatabaseReference myRef = database.getReference("message");
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,19 +53,29 @@ public class AppGUI extends AppCompatActivity {
         plus2 = (ImageView) findViewById(R.id.plus2);
         plus3 = (ImageView) findViewById(R.id.plus3);
         plus4 = (ImageView) findViewById(R.id.plus4);
-        graph1 = (GraphView) findViewById(R.id.graph1);
-        graph2 = (GraphView) findViewById(R.id.graph2);
-        graph3 = (GraphView) findViewById(R.id.graph3);
-        graph4 = (GraphView) findViewById(R.id.graph4);
 
+        graph1 = new RTGraph(1);
+        graph1.graph = (GraphView) findViewById(R.id.graph1); //what's fucking wrong??
+        graph2 = new RTGraph(2);
+        graph2.graph = (GraphView) findViewById(R.id.graph2);
+        graph3 = new RTGraph(3);
+        graph3.graph = (GraphView) findViewById(R.id.graph3);
+        graph4 = new RTGraph(4);
+        graph4.graph = (GraphView) findViewById(R.id.graph4);
+
+        init();
+        addListenerOnButton();
+    }
+
+    private void init(){
         start.setVisibility(View.VISIBLE);
         pause.setVisibility(View.GONE);
         stop.setVisibility(View.GONE);
-        graph1.setVisibility(View.GONE);
-        graph2.setVisibility(View.GONE);
-        graph3.setVisibility(View.GONE);
-        graph4.setVisibility(View.GONE);
-        addListenerOnButton();
+        graph1.graph.setVisibility(View.GONE);
+        graph2.graph.setVisibility(View.GONE);
+        graph3.graph.setVisibility(View.GONE);
+        graph4.graph.setVisibility(View.GONE);
+
     }
 
     ////////////////begin Gestures////////////////////
@@ -159,7 +175,9 @@ public class AppGUI extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 plus1.setVisibility(View.GONE);
-                graph1.setVisibility(View.VISIBLE);
+                graph1.addPoint(1,1);
+                graph1.addPoint(2,3);
+                //graph1.addPoint(3,3); why ??
             }
 
         });
@@ -168,7 +186,7 @@ public class AppGUI extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 plus2.setVisibility(View.GONE);
-                graph2.setVisibility(View.VISIBLE);
+                graph2.addPoint(5,5);
             }
 
         });
@@ -177,7 +195,7 @@ public class AppGUI extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 plus3.setVisibility(View.GONE);
-                graph3.setVisibility(View.VISIBLE);
+                graph3.addPoint(0,0);
             }
 
         });
@@ -186,7 +204,7 @@ public class AppGUI extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 plus4.setVisibility(View.GONE);
-                graph4.setVisibility(View.VISIBLE);
+                graph4.addPoint(-1,1);
             }
 
         });
